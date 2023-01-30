@@ -18,17 +18,18 @@ void result() {
 }
 void generate() {
 	int k = n/2;
-	while (A[k] != 0 && k <= n) {
-		++k;
+	while (A[k] != 0 && k < n) {
+		k++;
 	}
-	if (k > n) NEXT = false;
+	if (k==n) {
+		NEXT = false;	
+	}
 	else {
-		A[k] = A[n-1-k] = 1;
-		for (int i = n-k; i < k; i++) {
+		A[k]=A[n-1-k]=1;
+		for (int i = n-k;i<k;i++) {
 			A[i] = 0;
-		}	
+		}
 	}
-	
 }
 
 int main() {
